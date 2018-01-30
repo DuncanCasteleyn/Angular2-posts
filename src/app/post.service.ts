@@ -6,11 +6,19 @@ import { Response } from '@angular/http';
 @Injectable()
 export class PostService {
 
+    private postServiceURI: string = 'http://jsonplaceholder.typicode.com/posts';
+
    constructor(private http: HttpClient) {}
 
    // get all posts
-   getAllPosts(): Observable<Post[]> {}
+   getAllPosts(): Observable<Post[]> {
+       this.http.get(this.postServiceURI).subscribe(data => {
+           return data
+       })
+   }
 
    // get comments based on the index
-   getCommentsForPost(index: number): Observable<Comment[]> {}
+   getCommentsForPost(index: number): Observable<Comment[]> {
+       return null;
+   }
 }

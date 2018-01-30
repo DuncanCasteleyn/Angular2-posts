@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { PostService } from './post.service'
 
 @Component({
    selector: 'post-list',
@@ -13,7 +14,8 @@ export class PostListComponent  {
 
    ngOnInit(): void {}
 
-   getComments(index: number): void {}
+   getComments(index: number): void {
+   }
 
    printComments(comments: Comment[]): void {}
 }
